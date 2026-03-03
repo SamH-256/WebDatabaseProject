@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Public Sans", arial, sans-serif;
+    margin: 0;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+}
+
+nav, .navSpacing {
+    padding: 10px;
+    background-color: #000767;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 5px;
+    color: white;
+}
+
+header {
+    padding: 10px;
+    background-color: #2e2e2e;
+    display: flex;
+}
+
+.subHeader {
+    background-color: #495b6a;
+    padding: 3px;
+}
+
+h1, h2 {
+    font-family: Helvetica, Arial, sans-serif;
+    color: white;
+    text-shadow: 5px 5px 10px #000059;
+}
+
+main {
+    padding: 10px;
+    background-color: #b9b9b9;
+    margin: 0;
+}
+
+footer {
+    padding: 1px;
+    text-align: center;
+    background-color: #008080;
+    color: white;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 25%;
+    background-color: #b9b9b9;
+}
