@@ -1,0 +1,27 @@
+CREATE TABLE IF NOT EXISTS User (
+    userID INT AUTO_INCREMENT,
+    firstName VARCHAR(50) NOT NULL,
+    lastName VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    password VARCHAR(50) NOT NULL,
+    CONSTRAINT userPK PRIMARY KEY(userID)
+);
+
+CREATE TABLE IF NOT EXISTS Task (
+    taskID INT AUTO_INCREMENT,
+    userID INT NOT NULL,
+    taskName VARCHAR(50) NOT NULL,
+    taskDescription VARCHAR(255) NOT NULL,
+    dueDay INT NOT NULL,
+    dueMonth INT NOT NULL,
+    dueYear INT NOT NULL,
+    CONSTRAINT taskPK PRIMARY KEY(taskID),
+    CONSTRAINT userFK FOREIGN KEY(userID) REFERENCES User(userID)
+);
+
+CREATE TABLE IF NOT EXISTS TaskStep (
+    taskID INT NOT NULL,
+    step VARCHAR(255) NOT NULL,
+    CONSTRAINT stepPK PRIMARY KEY(taskID, step),
+    CONSTRAINT taskFK FOREIGN KEY(taskID) REFERENCES Task(taskID)
+);
