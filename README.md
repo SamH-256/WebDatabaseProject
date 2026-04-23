@@ -13,8 +13,8 @@ A USER may create any number of TASKs. Each TASK is created by only one USER.
 
 ## ERD Diagram
 Diagram demonstrating the relationship between the core entities of the database and help understand how each one is connected as well as any hierarchies and dependencies.
-![ERD Diagram](/images/ERD.png "ERD Diagram")
+![ERD Diagram](public/images/ERD.png "ERD Diagram")
 
 ## Relation Diagram
 Helps plan out the eventual database tables by presenting the entities as table rows. Breaks down any composite attributes and seperates out any multi-valued attributes. More detailed information on how the keys connect all the entities.
-![Relation Diagram](/images/Relation%20Diagram.png "Relation Diagram")
+![Relation Diagram](public/images/Relation%20Diagram.png "Relation Diagram")

@@ -1,0 +1,29 @@
+{
+  "name": "webdatabaseproject",
+  "version": "1.0.0",
+  "description": "- User can log in and view a dashboard of tasks they need to complete \r - Each task can have built in checklists for sub-tasks to break it down into simpler steps\r - Marking all subtasks as complete will mark the task as complete\r - Once task is marked as complete it is removed from the main dashboard but can be viewed from completion history\r - Each task will have an assigned completion date, and they will be displayed in order of most upcoming\r - User has the option to create new tasks as well as edit and delete existing tasks",
+  "homepage": "https://github.com/SamH-256/WebDatabaseProject#readme",
+  "bugs": {
+    "url": "https://github.com/SamH-256/WebDatabaseProject/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamH-256/WebDatabaseProject.git"
+  },
+  "license": "ISC",
+  "author": "Samuel Heinz",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mysql2": "^3.22.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
