@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS User (
     firstName VARCHAR(50) NOT NULL,
     lastName VARCHAR(50) NOT NULL,
     email VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL,
+    password VARCHAR(250) NOT NULL,
     CONSTRAINT userPK PRIMARY KEY(userID)
 );
 
@@ -19,9 +19,11 @@ CREATE TABLE IF NOT EXISTS Task (
     CONSTRAINT userFK FOREIGN KEY(userID) REFERENCES User(userID)
 );
 
+/* Did not implement
 CREATE TABLE IF NOT EXISTS TaskStep (
     taskID INT NOT NULL,
     step VARCHAR(255) NOT NULL,
     CONSTRAINT stepPK PRIMARY KEY(taskID, step),
     CONSTRAINT taskFK FOREIGN KEY(taskID) REFERENCES Task(taskID)
 );
+*/

@@ -57,3 +57,7 @@ footer {
     padding: 10px 25%;
     background-color: #b9b9b9;
 }
+
+.error {
+    color: red;
+}

@@ -27,4 +27,60 @@ async function getAllTasks() {
     await con.query(sql)
 }
 
-module.exports = { getAllTasks }
+async function getUserTasks(user) {
+    let sql = `
+       SELECT * FROM TASK
+       WHERE userID=?
+    `
+
+    let taskList = await con.query(sql, [user.userID])
+
+    return taskList
+}
+
+async function taskExists(task) {
+    let sql = `
+        SELECT * FROM Task
+        WHERE taskName=?
+    `
+
+    let ctask = await con.query(sql, [task.taskName])
+    return ctask[0]
+}
+
+async function taskExistsByName(taskToDelete) {
+    let sql = `
+        SELECT * FROM Task
+        WHERE taskName=?
+        AND userID=?
+    `
+
+    let ctask = await con.query(sql, [taskToDelete[0], taskToDelete[1]])
+    return ctask[0]
+}
+
+async function createTask(task) {
+    let ctask = await taskExists(task)
+    if(ctask) throw Error("Task already exists!")
+    
+    let sql = `
+        INSERT INTO Task(userID, taskName, taskDescription, dueDay, dueMonth, dueYear)
+        VALUES(?, ?, ?, ?, ?, ?)
+    `
+    
+    await con.query(sql, [task.userID, task.taskName, task.taskDescription, task.dueDay, task.dueMonth, task.dueYear])
+}
+
+async function deleteTask(taskToDelete) {
+    let ctask = await taskExistsByName(taskToDelete)
+    if(!ctask) throw Error("Task doesn't exist!")
+
+    let sql = `
+        DELETE FROM Task
+        WHERE taskName=?
+    `
+
+    await con.query(sql, [taskName])
+}
+
+module.exports = { getAllTasks, createTask, getUserTasks, deleteTask }
